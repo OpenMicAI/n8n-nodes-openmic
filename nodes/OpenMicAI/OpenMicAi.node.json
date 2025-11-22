@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-openmic.OpenMicAI",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Miscellaneous"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://app.openmic.ai/api-key"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.openmic.ai"
+			}
+		]
+	}
+}
