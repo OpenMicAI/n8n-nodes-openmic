@@ -4,7 +4,7 @@
 	"description": "Official n8n node for OpenMicAI API integration",
 	"author": {
 		"name": "OpenMic AI",
-		"email": "support@openmic.ai",
+		"email": "team@openmic.ai",
 		"url": "https://openmic.ai"
 	},
 	"license": "MIT",
