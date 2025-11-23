@@ -10,12 +10,25 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-[In Progress]
+### Phone Call
+
+- **Create a Phone Call** - Initiate a phone call between two numbers with optional agent override, customer ID, dynamic variables, and callback URL.
+
+### Bot
+
+- **Find Bot** - Retrieve a specific bot by its Agent UID.
+- **Get Many** - List all bots with optional filters (name, created date range) and limit.
+
+### Call
+
+- **Find Call** - Retrieve a specific call by its Call UID.
+- **Get Many** - List all calls with optional filters (customer ID, phone numbers, bot ID, date range, call status, call type) and limit.
+- **Watch Call (Webhook Trigger)** - Watch a call by its Bot UID and trigger a webhook when the call is completed.
 
 ## Resources
 
-* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-* [OpenMic API Documentation](https://docs.openmic.ai)
+- [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+- [OpenMic API Documentation](https://docs.openmic.ai)
 
 ## Support
 
