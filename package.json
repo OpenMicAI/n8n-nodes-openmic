@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-openmic",
-	"version": "0.1.2-0",
+	"version": "0.1.2",
 	"description": "Official n8n node for OpenMicAI API integration",
 	"author": {
 		"name": "OpenMic AI",
