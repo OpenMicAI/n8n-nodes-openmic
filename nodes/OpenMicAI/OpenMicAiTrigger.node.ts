@@ -132,7 +132,6 @@ export class OpenMicAiTrigger implements INodeType {
 		}
 
 		if (method === 'POST') {
-			// Handle webhook payload
 			const event = this.getNodeParameter('trigger', 0) as string;
 
 			if (event === 'newPostCallSummary') {
