@@ -40,7 +40,7 @@ export const callOperations: INodeProperties[] = [
 				action: 'Get many calls',
 				routing: {
 					request: {
-						method: 'POST',
+						method: 'GET',
 						url: '/v1/list-calls',
 					},
 				},
