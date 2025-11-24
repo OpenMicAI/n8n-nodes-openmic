@@ -209,6 +209,13 @@ export class OpenMicAiTrigger implements INodeType {
 					botId: call.agent_id,
 					customerId: call.customer_id,
 					callType: call.call_type,
+					direction: call.direction,
+					transcript: call.transcript,
+					recordingUrl: call.recording_url,
+					latency: call.latency,
+					callAnalysis: call.call_analysis,
+					callCost: call.call_cost,
+					dynamicVariables: call.dynamic_variables,
 				}));
 
 				return [this.helpers.returnJsonArray(mappedData)];
