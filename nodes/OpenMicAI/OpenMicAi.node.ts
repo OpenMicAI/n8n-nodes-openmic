@@ -136,7 +136,8 @@ export class OpenMicAi implements INodeType {
 						name: 'customer_id',
 						type: 'string',
 						default: '',
-						description: 'The Customer ID serves as metadata for identifying and tracking API calls, enabling per-customer usage monitoring and billing. It is particularly utilized in whitelabeling integrations via our API.',
+						description:
+							'The Customer ID serves as metadata for identifying and tracking API calls, enabling per-customer usage monitoring and billing. It is particularly utilized in whitelabeling integrations via our API.',
 					},
 					{
 						displayName: 'Dynamic Variables',
@@ -191,7 +192,7 @@ export class OpenMicAi implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Enter the agent\'s UID',
+				description: "Enter the agent's UID",
 			},
 			{
 				displayName: 'Limit',
@@ -314,7 +315,8 @@ export class OpenMicAi implements INodeType {
 					},
 				},
 				default: '',
-				description: 'The Customer ID serves as metadata for identifying and tracking API calls, enabling per-customer usage monitoring and billing. It is particularly utilized in whitelabeling integrations via our API.',
+				description:
+					'The Customer ID serves as metadata for identifying and tracking API calls, enabling per-customer usage monitoring and billing. It is particularly utilized in whitelabeling integrations via our API.',
 			},
 			{
 				displayName: 'From Number (E.164)',

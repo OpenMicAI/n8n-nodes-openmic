@@ -14,10 +14,10 @@ export async function handleCreatePhoneCall(
 	const fromNumber = this.getNodeParameter('from_number', i) as string;
 	const toNumber = this.getNodeParameter('to_number', i) as string;
 	const additionalFields = this.getNodeParameter('additionalFields', i, {}) as IDataObject;
-	const overrideAgentId = additionalFields.override_agent_id as string || '';
-	const customerId = additionalFields.customer_id as string || '';
-	const dynamicVariables = additionalFields.dynamic_variables as IDataObject || {};
-	const callbackUrl = additionalFields.callback_url as string || '';
+	const overrideAgentId = (additionalFields.override_agent_id as string) || '';
+	const customerId = (additionalFields.customer_id as string) || '';
+	const dynamicVariables = (additionalFields.dynamic_variables as IDataObject) || {};
+	const callbackUrl = (additionalFields.callback_url as string) || '';
 
 	// Validate phone numbers
 	if (!validateE164Number(fromNumber)) {
@@ -56,28 +56,19 @@ export async function handleCreatePhoneCall(
 	return await openMicApiRequest.call(this, 'POST', '/v1/create-phone-call', body);
 }
 
-export async function handleGetBot(
-	this: IExecuteFunctions,
-	i: number,
-): Promise<IDataObject> {
+export async function handleGetBot(this: IExecuteFunctions, i: number): Promise<IDataObject> {
 	const uid = this.getNodeParameter('uid', i) as string;
 
 	return await openMicApiRequest.call(this, 'GET', `/v1/bots/${uid}`);
 }
 
-export async function handleGetCall(
-	this: IExecuteFunctions,
-	i: number,
-): Promise<IDataObject> {
+export async function handleGetCall(this: IExecuteFunctions, i: number): Promise<IDataObject> {
 	const uid = this.getNodeParameter('uid', i) as string;
 
 	return await openMicApiRequest.call(this, 'GET', `/v1/call/${uid}`);
 }
 
-export async function handleListBots(
-	this: IExecuteFunctions,
-	i: number,
-): Promise<IDataObject> {
+export async function handleListBots(this: IExecuteFunctions, i: number): Promise<IDataObject> {
 	const qs: IDataObject = {};
 
 	const limit = this.getNodeParameter('limit', i, 20) as number;
@@ -102,10 +93,7 @@ export async function handleListBots(
 	return response;
 }
 
-export async function handleListCalls(
-	this: IExecuteFunctions,
-	i: number,
-): Promise<IDataObject> {
+export async function handleListCalls(this: IExecuteFunctions, i: number): Promise<IDataObject> {
 	const qs: IDataObject = {};
 
 	const limit = this.getNodeParameter('limit', i, 20) as number;

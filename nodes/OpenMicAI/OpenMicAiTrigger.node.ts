@@ -132,13 +132,7 @@ export class OpenMicAiTrigger implements INodeType {
 					qs.bot_id = botId;
 				}
 
-				const response = await openMicApiRequest.call(
-					this,
-					'GET',
-					'/v1/calls',
-					{},
-					qs,
-				);
+				const response = await openMicApiRequest.call(this, 'GET', '/v1/calls', {}, qs);
 
 				// Validate response structure
 				if (!response) {
@@ -197,12 +191,8 @@ export class OpenMicAiTrigger implements INodeType {
 				const mappedData = newCalls.map((call: any) => ({
 					id: call.call_id,
 					callStatus: call.call_status,
-					startedAt: call.start_timestamp
-						? new Date(call.start_timestamp).toISOString()
-						: null,
-					endedAt: call.end_timestamp
-						? new Date(call.end_timestamp).toISOString()
-						: null,
+					startedAt: call.start_timestamp ? new Date(call.start_timestamp).toISOString() : null,
+					endedAt: call.end_timestamp ? new Date(call.end_timestamp).toISOString() : null,
 					from: call.from_number,
 					to: call.to_number,
 					duration: call.duration_ms ? call.duration_ms / 1000 : null,
