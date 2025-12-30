@@ -112,56 +112,47 @@ export class OpenMicAi implements INodeType {
 				placeholder: '+11234567890',
 			},
 			{
-				displayName: 'Override Agent ID',
-				name: 'override_agent_id',
-				type: 'string',
+				displayName: 'Additional Fields',
+				name: 'additionalFields',
+				type: 'collection',
+				placeholder: 'Add Field',
+				default: {},
 				displayOptions: {
 					show: {
 						resource: ['phoneCall'],
 						operation: ['create'],
 					},
 				},
-				default: '',
-				description: 'Enter the Agent UID to override the one attached with the number',
-			},
-			{
-				displayName: 'Customer ID',
-				name: 'customer_id',
-				type: 'string',
-				displayOptions: {
-					show: {
-						resource: ['phoneCall'],
-						operation: ['create'],
+				options: [
+					{
+						displayName: 'Override Agent ID',
+						name: 'override_agent_id',
+						type: 'string',
+						default: '',
+						description: 'Enter the Agent UID to override the one attached with the number',
 					},
-				},
-				default: '',
-				description: 'The Customer ID serves as metadata for identifying and tracking API calls, enabling per-customer usage monitoring and billing. It is particularly utilized in whitelabeling integrations via our API.',
-			},
-			{
-				displayName: 'Dynamic Variables',
-				name: 'dynamic_variables',
-				type: 'json',
-				displayOptions: {
-					show: {
-						resource: ['phoneCall'],
-						operation: ['create'],
+					{
+						displayName: 'Customer ID',
+						name: 'customer_id',
+						type: 'string',
+						default: '',
+						description: 'The Customer ID serves as metadata for identifying and tracking API calls, enabling per-customer usage monitoring and billing. It is particularly utilized in whitelabeling integrations via our API.',
 					},
-				},
-				default: '{}',
-				description: 'Dynamic variable for mapping to the variables in the prompt',
-			},
-			{
-				displayName: 'Callback URL',
-				name: 'callback_url',
-				type: 'string',
-				displayOptions: {
-					show: {
-						resource: ['phoneCall'],
-						operation: ['create'],
+					{
+						displayName: 'Dynamic Variables',
+						name: 'dynamic_variables',
+						type: 'json',
+						default: '{}',
+						description: 'Dynamic variable for mapping to the variables in the prompt',
 					},
-				},
-				default: '',
-				description: 'Post-call webhook URL',
+					{
+						displayName: 'Callback URL',
+						name: 'callback_url',
+						type: 'string',
+						default: '',
+						description: 'Post-call webhook URL',
+					},
+				],
 			},
 			// Bot operations and fields
 			{
