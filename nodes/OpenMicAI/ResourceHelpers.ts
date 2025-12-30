@@ -13,10 +13,11 @@ export async function handleCreatePhoneCall(
 ): Promise<IDataObject> {
 	const fromNumber = this.getNodeParameter('from_number', i) as string;
 	const toNumber = this.getNodeParameter('to_number', i) as string;
-	const overrideAgentId = this.getNodeParameter('override_agent_id', i, '') as string;
-	const customerId = this.getNodeParameter('customer_id', i, '') as string;
-	const dynamicVariables = this.getNodeParameter('dynamic_variables', i, {}) as IDataObject;
-	const callbackUrl = this.getNodeParameter('callback_url', i, '') as string;
+	const additionalFields = this.getNodeParameter('additionalFields', i, {}) as IDataObject;
+	const overrideAgentId = additionalFields.override_agent_id as string || '';
+	const customerId = additionalFields.customer_id as string || '';
+	const dynamicVariables = additionalFields.dynamic_variables as IDataObject || {};
+	const callbackUrl = additionalFields.callback_url as string || '';
 
 	// Validate phone numbers
 	if (!validateE164Number(fromNumber)) {
