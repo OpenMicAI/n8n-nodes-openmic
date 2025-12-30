@@ -16,34 +16,16 @@ export const callOperations: INodeProperties[] = [
 				name: 'Create Phone Call',
 				value: 'createPhoneCall',
 				action: 'Create a phone call',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/v1/create-phone-call',
-					},
-				},
 			},
 			{
 				name: 'Get',
 				value: 'get',
 				action: 'Get a call',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '=/v1/get-call/{{$parameter.callId}}',
-					},
-				},
 			},
 			{
 				name: 'Get Many',
 				value: 'getAll',
 				action: 'Get many calls',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/v1/list-calls',
-					},
-				},
 			},
 		],
 		default: 'createPhoneCall',
